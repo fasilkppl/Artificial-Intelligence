@@ -1,0 +1,36 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+.ENV/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Windows shortcut files
+*.lnk
+
+# VS Code settings (optional but recommended)
+.vscode/
+
+# PyCharm / JetBrains
+.idea/
+
+# Logs
+*.log
+
+# Backup files
+*.bak
+*.tmp
