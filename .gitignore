@@ -34,3 +34,7 @@ Desktop.ini
 # Backup files
 *.bak
 *.tmp
+
+# MLflow database files
+mlflow.db
+../mlflow.db
