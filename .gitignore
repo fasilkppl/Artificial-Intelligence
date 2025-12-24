@@ -38,3 +38,7 @@ Desktop.ini
 # MLflow database files
 mlflow.db
 ../mlflow.db"mlflow.db" 
+
+# DeepLearning models and exports
+DeepLearning/saved_model/
+DeepLearning/*.tflite
