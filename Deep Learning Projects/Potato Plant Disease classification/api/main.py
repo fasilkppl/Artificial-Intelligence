@@ -23,7 +23,21 @@ app.add_middleware(   #this is to handle CORS
 )
 
 # Load the pre-trained model
-MODEL = tf.keras.models.load_model("../saved_models/1")
+import os
+import tensorflow as tf
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(
+    BASE_DIR,
+    "..",
+    "saved_models",
+    "1"
+)
+
+MODEL = tf.keras.models.load_model(MODEL_PATH)
+
+
 
 # Define class names for prediction, same as the .ipynb notebook.
 CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
@@ -47,7 +61,7 @@ async def predict(
     image = read_file_as_image(await file.read()) #read the uploaded file as an image, await is to manage delay for multiple requests.
     img_batch = np.expand_dims(image, 0) #expand dimensions to create a batch of size 1
     
-    predictions = MODEL.predict(img_batch) #make prediction using the pre-trained model 
+    predictions = MODEL.predict(img_batch) # type: ignore # make prediction using the pre-trained model 
 
     predicted_class = CLASS_NAMES[np.argmax(predictions[0])] #get the class with the highest predicted probability
     confidence = np.max(predictions[0]) #get the confidence score for the predicted class
