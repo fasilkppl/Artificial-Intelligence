@@ -42,3 +42,4 @@ mlflow.db
 # DeepLearning models and exports
 DeepLearning/saved_model/
 DeepLearning/*.tflite
+NLP Projects/project-nlp-log-classification-main/.env 
